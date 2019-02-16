@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .inner{ height: 150px; background-color:red; }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- .stop，事件修饰符，阻止事件冒泡 
+            <div class="inner" @click="div1Handler">
+                <input type="button" value="戳他" @click.stop="btnHandler"> 
+            </div>
+        -->
+
+        <!-- .prevent阻止默认行为 
+            <a href="https://www.baidu.com" @click.prevent="linkClick">有问题，先去百度！</a>
+        -->
+        
+        <!-- .capture捕获事件，【好像没有效果】 
+            <div class="inner" @click.capture="div1Handler">
+                <input type="button" value="戳他" @click="btnHandler"> 
+            </div>
+        -->
+        
+        <!-- .self只有点击自身才触发事件，不允许冒泡等触发 
+            <div class="inner" @click.self="div1Handler">
+                <input type="button" value="戳他" @click="btnHandler"> 
+            </div>
+        -->
+        
+        <!-- .once只触发一次，事件可以串联 -->
+        <a href="https://www.baidu.com" @click.prevent.once="linkClick">有问题，先去百度！</a>
+
+    </div>
+
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{
+                div1Handler(){
+                    console.log("这是触发了inner div的点击事件")
+                },
+                btnHandler(){
+                    console.log("这是触发了 btn div的点击事件")
+                },
+                linkClick(){
+                    console.log("这是触发了链接的点击事件")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+

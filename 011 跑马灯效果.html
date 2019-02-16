@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯效果</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="浪起来" @click="lang">
+        <input type="button" value="低调" @click="stop">
+        <h4>{{ msg }}</h4>
+    </div>
+
+    <script>
+        //注意：在vue实例中，如果想要调用data上的数据，或者想要调用methods中的方法，必须通过this.数据属性名 或 this.方法名来进行访问
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "猥琐发育，别浪~~~~!",
+                intervalId: null,   //在data上定义，定时器的ID
+            },
+            methods:{
+                lang(){
+                    if (this.intervalId != null) return;    //当存在定时器时，就不开启定时器
+
+                    this.intervalId = setInterval(() => { //使用箭头函数可以隐式的执行了this的指向问题
+                        var start = this.msg.substring(0, 1)
+                        var end = this.msg.substring(1)
+                        this.msg = end + start      //直接刷新不需要使用类似微信小程序的this.setData()
+                    }, 400)
+                },
+                stop(){//停止定时器
+                    clearInterval(this.intervalId)
+                    this.intervalId = null      //每当清除定时器后，需要重新初始化intervalId
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

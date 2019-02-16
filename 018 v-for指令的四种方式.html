@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--标准的v-for循环-->
+        <p v-for="item in list">{{ item }}</p>
+        <p v-for="(item, index) in list">{{index}}---{{item}}</p>
+
+        <!-- 使用v-for循环复杂的对象数组 -->
+        <p v-for="person in people">{{person.id}}------{{person.name}}</p>
+
+        <!--使用v-for遍历对象-->
+        <p v-for="(value, key, index) in user">键是：{{key}}&nbsp;值是：{{value}}&nbsp;索引是：{{index}}</p>
+
+        <!-- 循环数字，注意如果使用v-for迭代数字的话，前面count值从1开始 -->
+        <p v-for="count in 5">这是第 {{count}} 次循环</p>
+    </div>
+
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                list: [1, 2, 3, 4, 5, 6],
+                people: [
+                    {id: '001', name: '张三'},
+                    {id: '002', name: '李四'},
+                    {id: '003', name: '王五'},
+                    {id: '004', name: '小红'}
+                ],
+                user: {
+                    id: 1,
+                    name: '托尼屎大颗',
+                    gender: '男'
+                }
+            },
+            methods:{}
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
