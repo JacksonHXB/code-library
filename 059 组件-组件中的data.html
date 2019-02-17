@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycom1></mycom1>
+        <counter></counter>
+    </div>
+
+    <template id="temp1">
+        <div>
+            <input type="button" value="+1" @click="increment">
+            <h3>{{count}}</h3>
+        </div>
+    </template>
+
+    <script>
+        Vue.component('mycom1',{
+            template: '<h1>这是全局组件----{{msg}}</h1>',
+            data: function(){
+                return {
+                    msg: '这是组件中的data数据'
+                }
+            }
+        })
+
+        var dataObj = {count:0}
+        Vue.component('counter', {
+            template: '#temp1',
+            data: function(){
+                // return dataObj          //引用了同样一个变量 
+                return {count: 0}
+            },
+            methods:{
+                increment(){
+                    this.count++
+                }
+            }
+        })
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{}
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

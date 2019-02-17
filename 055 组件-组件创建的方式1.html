@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-com1></my-com1>
+    </div>
+
+    <script>
+        /*01 利用Vue.extend来创建全局的Vue组件*/
+        var com1 = Vue.extend({
+            template: '<h3>这是使用Vue.extend()创建的组件</h3>'    //通过template属性，指定了组件要展示的HTML结构
+        })
+
+        /*02 使用Vue.component()显示组件*/
+        Vue.component('myCom1', com1)   //如果这里使用驼峰命名法则，则显示时是my-com1
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{}
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

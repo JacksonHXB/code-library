@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- 创建一个模板文件 -->
+    <template id="temp1">
+        <h1>这是创建组件的第三种方式</h1>
+    </template>
+
+    <!-- 创建一个私有组件的模板文件 -->
+    <template id="temp2">
+        <h3>这是私有组件</h3>
+    </template>
+
+    <div id="app">
+        <mycom3></mycom3>
+    </div>
+
+    <div id="app2">
+        <mycom3></mycom3><!-- 引用公用组件 -->
+        <login></login><!-- 引用私有组件 -->
+    </div>
+
+    <script>
+        /*创建组件的方式3*/
+        Vue.component('mycom3', {
+            template: '#temp1'
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {}
+        })
+
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {},
+            methods: {},
+            /*定义私有的组件*/
+            components: {
+                login: {
+                    template: '#temp2'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

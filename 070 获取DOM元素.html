@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="获取元素" @click="getElement">
+        <h3 id="myh3" ref="myh3">哈哈哈，今天天气实在是太好了！！！</h3>
+
+        <login ref="mylogin"></login>
+    </div>
+
+    <script>
+        var login = {
+            data(){
+                return {
+                    msg: "这是组件中的数据"
+                }
+            },
+            template: '<h4>这是组件中的内容</h4>'
+        }
+
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{
+                getElement(){
+                    // console.log(document.getElementById("myh3").innerText) //操作DOM获取值
+
+                    //Vue中refs保存了要操作元素的DOM对象
+                    console.log(this.$refs.myh3.innerText)
+
+                    //从组件中获取数据
+                    console.log(this.$refs.mylogin.msg)
+                }
+            },
+            components:{
+                login
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 父组件向子组件传递方法，使用的是时间绑定机制 -->
+        <com2 @parent_func="show"></com2>
+    </div>
+
+    <template id="temp1">
+        <div>
+            <h1>这是子组件</h1>
+            <input type="button" value="这是子组件的按钮,接收父组件传递的函数" @click="myclick">
+        </div>
+    </template>
+
+    <script>
+        var com2 = {
+            data(){
+                return {
+                    sonmsg: {name:"子组件", age:1}
+                }
+            },
+            template: '#temp1',
+            methods: {
+                myclick(){
+                    //触发父组件传递来的函数
+                    this.$emit('parent_func', this.sonmsg)
+                }
+            }
+        }
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                show(data){
+                    console.log("调用了父组件的show方法--", data.name)
+                }
+            },
+            components:{
+                com2
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

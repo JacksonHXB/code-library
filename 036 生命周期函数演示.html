@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="修改MSG" @click="msg='No'">
+        <h3 id="h3">{{ msg }}</h3>
+    </div>
+
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg: 'ok'
+            },
+            methods:{
+                show(){
+                    console.log("执行了show方法")
+                }
+            },
+            /*01 首先执行该函数，表示实例完全被创建出来之前执行的事件*/
+            beforeCreate() {
+                //注意：在beforeCreate生命周期函数执行的时候，data和methods中的数据都还没有初始化
+                console.log("01 执行了beforeCreate()")
+            },
+            /*02 将data，methods加入到内存中*/
+            created() {
+                //在created中，data和methods都已经被初始化好了
+                //如果要调用methods中的方法，或者操作data中的数据，最早，只能在created函数中执行
+                console.log("02 执行了created()")
+            },
+            /*03 将vue指令执行并生成编译模板后，只显示模板字符串*/
+            beforeMount() {
+                console.log("03 执行了beforeMount()")
+                //在beforeMount执行的时候，模板已经在内存中编译好了，但是尚未挂载到页面中去，此时，页面是旧的
+            },
+            /*04 表示，内存中的模板，已经真实挂载到了页面中*/
+            mounted() {
+                console.log("04 执行了mounted()")
+                console.log(this.msg)
+                console.log("------------- 实例创建完成 ------------------------")
+                //注意：mounted是实例创建期间的最后一个生命周期函数，当执行完mounted就表示，实例已经被完全创建好了
+            },
+
+            /*--------------接下来是运行中的两个事件---------------------*/
+
+            /*01 这时候，界面没有被更新，而数据被更新了*/
+            beforeUpdate() {
+                console.log("01 运行时，执行了beforeUpdate()")
+                //当执行该函数时，页面中显示的数据还是旧的，数据是最新的，页面尚未和最新的数据保持同步
+            },
+            /*02 更新完成后执行的函数*/
+            updated() {
+                console.log("02 运行时，执行了updated()")
+                console.log("------------- 更新数据完成 ------------------------")
+                //执行该函数时，页面上元素的内容与DOM中元素已经一致了
+            },
+
+            /*---------- 关闭页面将执行的函数---------------------------------------*/
+            beforeDestroy() {
+                console.log("01 运行了beforeDestory()")
+            },
+            destroyed() {
+                console.log("02 运行了destoryed()")
+            },
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

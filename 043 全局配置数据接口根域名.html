@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局配置数据接口根域名</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script><!-- 引入vue-resource -->
+</head>
+
+<body>
+    <div id="app">
+        <h1>该文件不能运行</h1>
+    </div>
+
+    <script>
+        /*全局配置服务器的根域名*/
+        Vue.http.options.root = 'http://vue.studyit.io/' //如果使用了该配置，请求时需要使用相对路径，就是api之前没有斜线
+        /*全局启用 emulateJSON*/
+        Vue.http.options.emulateJSON = true    //在使用$http.post传递时就不需要使用可选项，emulateJSON表示默认使用xxx/www-w***.urlunco的方式传递数据
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+            
+            },
+            methods:{
+                del(){
+                    // this.$http.get('http://vue.studyit.io/api/delproduct/1').then(res => {
+                    this.$http.get('api/delproduct/1').then(res => {
+                        if(result.body.sttus === 0){
+                            this.getAllList()
+                        }else{
+                            alert("删除失败！")
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
