@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>watch</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="firstname"> +
+        <input type="text" v-model="lastname"> =
+        <input type="text" v-model="fullname">
+    </div>
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                firstname: '',
+                lastname: '',
+                fullname: ''
+            },
+            methods:{
+                getFullName(){
+                    this.fullname = this.firstname + this.lastname
+                }
+            },
+            watch:{ //使用这个属性，可以监视data中指定数据的变化然后触发watch对应的函数
+                firstname: function(){
+                    console.log('监视到了firstname的变化')
+                    this.getFullName()
+                },
+                lastname: function(newVal, oldVal){
+                    console.log(newVal, oldVal)
+                    console.log('监视到了lastname的变化')
+                    this.getFullName()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

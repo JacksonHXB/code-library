@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="firstname"> +
+        <input type="text" v-model="lastname"> =
+        <input type="text" v-model="fullname">
+    </div>
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                firstname: '',
+                lastname: '',
+            },
+            methods:{
+                getFullName(){
+                    this.fullname = this.firstname + this.lastname
+                }
+            },
+            /*注意，计算属性在调用的时候，一定不要家()，直接把它当做普通属性使用就行*/
+            computed:{      //在computed中，可以定义一些属性，这些属性叫做计算属性
+                fullname: function(){
+                    return this.firstname + this.lastname
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

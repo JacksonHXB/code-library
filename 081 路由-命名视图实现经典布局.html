@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background:orange;
+            height:80px;
+        }
+        .container{
+            display: flex;
+            height:600px;
+        }
+        .left{
+            background:hotpink;
+            flex:2;
+        }
+        .main{
+            background:lightgreen;
+            flex:8;
+        }
+        .h1{
+            margin: 0px;
+            padding: 0px;
+            font-size:16px;
+        }       
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <div class="container">
+            <router-view name="left"></router-view>
+            <router-view name="main"></router-view>
+        </div>
+    </div>
+
+    <script>
+        let header = {
+            template: '<h1 class="header">Header头部区域</h1>'
+        }
+        let leftBox = {
+            template: '<h1 class="left">leftBox区域</h1>'
+        }
+        let mainBox = {
+            template: '<h1 class="main">mainBox区域</h1>'
+        }
+        let router = new VueRouter({
+            routes: [
+                {
+                    path: '/', 
+                    components: {       //一个路径下挂载三个不同的组件，默认挂载header
+                        default: header,
+                        left: leftBox,
+                        main: mainBox
+                    }
+                }
+            ]
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {},
+            router
+        })
+    </script>
+</body>
+
+</html>
