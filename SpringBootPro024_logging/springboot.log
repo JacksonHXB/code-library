@@ -1,0 +1,18 @@
+2018-10-18 19:24:28.166  INFO 3276 --- [main] com.hxb.AppTest                          : Starting AppTest on 8BAVKPUL1YWWSOJ with PID 3276 (started by Administrator in D:\Codes\java_codes\demos\SpringBootPro024_logging)
+2018-10-18 19:24:28.167 DEBUG 3276 --- [main] com.hxb.AppTest                          : Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+2018-10-18 19:24:28.168  INFO 3276 --- [main] com.hxb.AppTest                          : No active profile set, falling back to default profiles: default
+2018-10-18 19:24:28.235  INFO 3276 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@a0666b9: startup date [Thu Oct 18 19:24:28 CST 2018]; root of context hierarchy
+2018-10-18 19:24:30.418  INFO 3276 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@a0666b9: startup date [Thu Oct 18 19:24:28 CST 2018]; root of context hierarchy
+2018-10-18 19:24:30.503  INFO 3276 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello]}" onto public java.lang.String com.hxb.controller.HelloController.hello()
+2018-10-18 19:24:30.507  INFO 3276 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-18 19:24:30.508  INFO 3276 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-18 19:24:30.569  INFO 3276 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-18 19:24:30.569  INFO 3276 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-18 19:24:30.653  INFO 3276 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-18 19:24:31.126  INFO 3276 --- [main] com.hxb.AppTest                          : Started AppTest in 3.37 seconds (JVM running for 4.164)
+2018-10-18 19:24:31.189 TRACE 3276 --- [main] com.hxb.AppTest                          : 这是trace日志....
+2018-10-18 19:24:31.189 DEBUG 3276 --- [main] com.hxb.AppTest                          : 这是debug日志....
+2018-10-18 19:24:31.190  INFO 3276 --- [main] com.hxb.AppTest                          : 这是info日志....
+2018-10-18 19:24:31.190  WARN 3276 --- [main] com.hxb.AppTest                          : 这是warn日志....
+2018-10-18 19:24:31.190 ERROR 3276 --- [main] com.hxb.AppTest                          : 这是error日志....
+2018-10-18 19:24:31.201  INFO 3276 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@a0666b9: startup date [Thu Oct 18 19:24:28 CST 2018]; root of context hierarchy

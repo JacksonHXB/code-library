@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- 引入模板引擎 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="favicon.ico">
+<title>员工添加页面</title>
+<!-- 引入webjars里面的css文件 -->
+<link href="" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+<!-- 引入静态资源文件 -->
+<link href="asserts/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+	<!-- 引入topBar -->
+	<div th:replace="commons/bar :: topbar"></div>
+	
+
+	<div class="container-fluid">
+		<div class="row">
+			<!-- 引入侧边栏 -->
+			<div th:replace="commons/bar :: #sidebar(activeUri='emps')"></div>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+				<!-- 需要区分是员工修改还是添加 -->
+				<form th:action="@{/emp}" method="POST">
+					<!-- 发送put请求修改员工数据 -->
+					<!-- 1，SpringMVC中配置HiddenHttpMethodFilter用来将请求转换成指定的请求方式(SpringBoot自动配置好的) -->
+					<!-- 2，页面创建一个POST表单 -->
+					<!-- 3，创建一个input项，name="_method";值就是我们指定的请求方式 -->
+					<input type="hidden" name="_method" value="put" th:if="${emp!=null}"/><!-- 当修改时才出现input框 -->
+					<input type="hidden" name="id" th:if="${emp!=null}" th:value="${emp.id}"/><!-- 当修改时才获取ID -->
+					<div class="form-group">
+						<label>名字</label>
+						<input name="lastName" type="text" class="form-control" placeholder="张三" th:value="${emp!=null}?${emp.lastName}">
+					</div>
+					<div class="form-group">
+						<label>邮箱</label>
+						<input name="email" type="email" class="form-control" placeholder="2379181662@qq.com" th:value="${emp!=null}?${emp.email}">
+					</div>
+					<div class="form-group">
+						<label>性别</label><br />
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" value="1" th:checked="${emp!=null}?${emp.gender==1}"/>
+							<label class="form-check-label">男</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" value="0" th:checked="${emp!=null}?${emp.gender==0}"/>
+							<label class="form-check-label">女</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>部门</label>
+						<select class="form-control" name="department.id">
+							<option th:selected="${emp!=null}?${dept.id == emp.department.id}" th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}"></option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>出生日期</label>
+						<input th:value="${emp!=null}?${#dates.format(emp.birth,'yyyy-MM-dd HH:mm')}" name="birth" type="text" class="form-control" placeholder="zhangsan">
+					</div>
+					<button type="submit" class="btn btn-primary" th:text="${emp!=null}?'修改':'添加'"></button>
+				</form>
+			</main>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+	<script src="../../../../assets/js/vendor/popper.min.js"></script>
+	<script src="../../../../dist/js/bootstrap.min.js"></script>
+
+	<!-- Icons -->
+	<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+	<script>
+		feather.replace()
+    </script>
+
+	<!-- Graphs -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+</body>
+</html>

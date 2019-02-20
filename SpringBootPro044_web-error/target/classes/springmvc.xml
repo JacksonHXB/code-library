@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- SpringMVC的基本配置 ，可以通过SpringBoot对SpringMVC的扩展进行实现
+<mvc:view-controller path="/hello" view-name="success">
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/hello/"></mvc:mapping>
+			<bean></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+</mvc:view-controller>
+-->

@@ -1,0 +1,31 @@
+server:
+    port: 8081
+spring:
+    profiles:
+        active: dev
+---
+server:
+    port: 8002
+spring:
+	profiles: dev
+---
+server:
+    port: 8004
+spring:
+    profiles: prod
+
+
+person:
+    lastName: hxb_${random.uuid}
+    age: ${random.int}
+    boss: false
+    birth: 2017/12/12
+    maps: {k1: v1,k2: v2}
+    lists:
+        - hl
+        - zj
+        - zb
+    dog:
+        name: ${person.lastName}_小狗
+        age: ${person.hello:12}
+    

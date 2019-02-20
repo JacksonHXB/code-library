@@ -1,0 +1,17 @@
+server:
+    port: 8083
+
+person:
+    lastName: hxb_${random.uuid}
+    age: ${random.int}
+    boss: false
+    birth: 2017/12/12
+    maps: {k1: v1,k2: v2}
+    lists:
+        - hl
+        - zj
+        - zb
+    dog:
+        name: ${person.lastName}_小狗
+        age: ${person.hello:12}
+    
