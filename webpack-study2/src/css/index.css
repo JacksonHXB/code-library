@@ -1,0 +1,14 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color:cyan;
+}
+/*
+    默认情况下，webpack无法处理css文件中的url地址npm i url-loader file-loader -D*/
+.box{
+    width:220px;
+    height:120px;
+    background:url('../images/test.jpg');
+    background-size:cover;
+    border:1px solid black;
+}
