@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <!-- 注意：不推荐直接在这里引用任何包或者任何css文件 -->
+    <!-- 这里直接引入一个js文件就行了,Es6不能使用，因此使用webpack打包工具 -->
+    <!-- <script src="./main.js"></script> -->
+    <!-- 注意：这是引入物理地址的bundle.js-->
+    <!-- <script src="../dist/bundle.js"></script> -->
+    <!-- 
+        html-webpack-plugin:
+            1) 在内存中生成html
+            2) 自动将打包好的bundle插入到页面中去
+        当我们使用html-webpack-plugin之后，我们不再需要手动处理bundle.js的引用路径了，因为这个插件，已经帮我们启动创建了一个合适script，并且引用了正确的路径
+        <script src="/dist/bundle.js"></script>
+    -->
+    <!-- 
+        01，webpack能处理JS文件之间的互相依赖关系 
+        02，webpack能处理JS的兼容性问题，把高级的浏览器不能识别的语法，转为低级的浏览器能正常识别的语法 格式：webpack 要打包文件的地址 被打包好的文件地址
+    -->
+
+    <!--
+        css会发起二次请求，不推荐使用
+        <link rel="stylesheet" href="./css/index.css">
+    -->
+</head>
+<body>
+    <ul>
+        <li>这是第1个li</li>
+        <li>这是第2个li</li>
+        <li>这是第3个li</li>
+        <li>这是第4个li</li>
+        <li>这是第5个li</li>
+        <li>这是第6个li</li>
+        <li>这是第7个li</li>
+        <li>这是第8个li</li>
+        <li>这是第9个li</li>
+        <li>这是第10个li</li>
+    </ul>
+</body>
+</html>

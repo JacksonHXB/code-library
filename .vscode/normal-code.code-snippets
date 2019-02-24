@@ -45,6 +45,28 @@
 			"",
 			"",
 		]
-	}
+	},
+	"vh-temp": {
+		"prefix": "vue-temp", // 触发的关键字 输入vh按下tab键
+		"description": "vue代码片段 快捷键：vh+tab ",
+		"body": [
+			"<template>",
+			"    <div>",
+			"        <h3>新闻列表页面</h3>",
+			"    </div>",
+			"</template>",
+			"",
+			"<script>",
+			"export default {",
+			"",
+			"}",
+			"</script>",
+			"",
+			"<style lang=\"css\" scoped>",
+			"",
+			"</style>"
+		]
+	},
+
 }
 	
