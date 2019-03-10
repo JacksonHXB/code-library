@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//ProSpider23_scrapy/items.py=utf-8
+encoding//ProSpider23_scrapy/middlewares.py=utf-8
+encoding//ProSpider23_scrapy/pipelines.py=utf-8
+encoding//ProSpider23_scrapy/settings.py=utf-8
+encoding//ProSpider23_scrapy/spiders/httpbin.py=utf-8
+encoding//ProSpider23_scrapy/spiders/quotes.py=utf-8
+encoding//ProSpider23_scrapy/spiders/zhihu.py=utf-8
