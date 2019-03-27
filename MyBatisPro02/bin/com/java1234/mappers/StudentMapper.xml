@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.mappers.StudentMapper">
+	
+	<insert id="add" parameterType="Student"  >
+		insert into tb_student values(null,#{name},#{age})
+	</insert>
+	
+	<update id="update" parameterType="Student" >
+		update tb_student set name=#{name},age=#{age} where id=#{id} 
+	</update>
+	
+
+	<delete id="delete" parameterType="Integer">
+		delete from tb_student where id=#{id}
+	</delete>
+
+
+	<select id="findById" parameterType="Integer" resultType="Student">
+		select * from tb_student where id=#{id}
+	</select>
+	
+	<!-- 查询所有学生，这里可以用映射解决方案 -->
+	<resultMap type="Student" id="StudentResult">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+	</resultMap>
+	<select id="find" resultMap="StudentResult">
+		select * from tb_student
+	</select>
+	
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

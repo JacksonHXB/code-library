@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.mappers.GradeMapper">
+	<resultMap type="Grade" id="GradeResult">
+		<result property="id" column="id"/>
+		<result property="gradeName" column="gradeName"/>
+		<!-- 这边传递才是主键 -->
+		<collection property="students" column="id" select="com.java1234.mappers.StudentMapper.findByGradeId" />
+	</resultMap>
+	<select id="findById" parameterType="Integer" resultMap="GradeResult">
+		select * from tb_grade where id=#{id}
+	</select>
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

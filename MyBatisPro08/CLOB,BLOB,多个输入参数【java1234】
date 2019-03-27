@@ -1,0 +1,5 @@
+一，处理CLOB,BLOB类型数据
+	CLOB:大文本类型（小说，，，，）在mysql中CLOB就是longtext
+	BLOB:二进制类型（电影，音乐）在mysql中BLOB就是longblob
+
+二，传输多个输入参数(hashMap)

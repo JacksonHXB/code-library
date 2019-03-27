@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 引入配置文件 -->
+	<properties resource="jdbc.properties"/>
+	<!-- 配置别名 -->
+	<typeAliases>
+		<typeAliases alias="Student" type="com.java1234.model.Student"/>
+	</typeAliases>
+	<!-- 配置环境 -->
+	<environments default="development">
+		<!-- 单一环境配置 -->
+		<environment>
+			<!-- 配置事务管理 -->
+			<transactionManager type="JDBC" />
+			<!-- 配置数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 配置映射器 -->
+	<mappers>
+		<!-- 配置StudentMapper映射 -->
+		<mapper resource="com.java1234/mappers/StudentMapper.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

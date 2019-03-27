@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间，对应的是接口的路径-->>
+<mapper namespace="com.java1234.mappers.StudentMapper">
+	<!-- 插入语句 -->
+	<insert id="add" parameterType="Student">
+		insert into tb_student values(null,#{name},#{age});
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

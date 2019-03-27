@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.mappers.StudentMapper">
+	<!--缓存
+		1）size：表示缓存cache中能容纳的最大元素数，默认是1024
+		2）flushInterval:定义缓存刷新周期，以毫秒计
+		3）eviction：定义缓存的移除机制，默认是LRU(least recently userd,最近最少使用),还有FIFP(first in first out ,先进先出 )
+		4）readOnly:默认是false，加入是true的话，缓存只能读
+	-->
+	<cache size="1024" flushInterval="60000" eviction="LRU" readOnly="false"/>
+
+	<resultMap type="Student" id="StudentResult">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+	</resultMap>
+	
+	<!-- 逻辑分页 -->
+	<select id="findStudents" resultMap="StudentResult">
+		select * from tb_student
+	</select>
+	
+	<!-- 物理分页 -->
+	<!-- select是默认使用缓存的，flushCache是清空缓存的意思 -->
+	<select id="findStudents2" parameterType="Map" resultMap="StudentResult" useCache="true" flushCache="false">
+		select * from tb_student
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

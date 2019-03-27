@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.mappers.StudentMapper">
+
+	<resultMap type="Student" id="StudentResult">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+	</resultMap>
+
+	<!--IF条件语句 -->
+	<select id="queryStudents" parameterType="Map" resultMap="StudentResult">
+		select * from tb_student
+		where gradeId=#{gradeId}
+		<if test="name!=null">
+			or name like #{name}
+		</if>
+		<if test="age!=null">
+			or age=#{age}
+		</if>
+	</select>
+	
+	<!--choose条件语句 -->
+	<select id="queryStudents2" parameterType="Map" resultMap="StudentResult">
+		select * from tb_student
+		<choose>
+			<when test="searchBy=='gradeId'">
+				where gradeId=#{gradeId}
+			</when>
+			<when test="searchBy=='name'">
+				where name like #{name}
+			</when>
+			<otherwise>
+				where age=#{age}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!--where语句 -->
+	<select id="queryStudents3" parameterType="Map" resultMap="StudentResult">
+		select * from tb_student
+		<where>
+			<if test="gradeId!=null">
+				gradeId=#{gradeId}
+			</if>
+			<if test="name!=null">
+				or name like #{name}
+			</if>
+			<if test="age!=null">
+				or age=#{age}
+			</if>
+		</where>
+	</select>
+	
+	<!--trim条件：功能和where元素相似，提供了前缀，更加灵活pregix前缀 -->
+	<select id="queryStudents4" parameterType="Map" resultMap="StudentResult">
+		select * from tb_student
+		<trim prefix="where" prefixOrrides="and/or">
+			<if test="gradeId!=null">
+				gradeId=#{gradeId}
+			</if>
+			<if test="name!=null">
+				or name like #{name}
+			</if>
+			<if test="age!=null">
+				or age=#{age}
+			</if>
+		</trim>
+	</select>
+	
+	<!--foreach条件 -->
+	<select id="queryStudents5" parameterType="Map" resultMap="StudentResult">
+		select * from tb_student
+		<if test="gradeIds!=null">
+			<where>
+				gradeId in
+				<foreach item="gradeId" collection="gradeIds" open="(" separator="," close=")">
+					#{gradeId}
+				</foreach>
+			</where>
+		</if>
+	</select>
+	
+	<!-- set:自动删除最后一个逗号 -->
+	<update id="updateStudent" parameterType="Student">
+		update tb_student
+		<set>
+			<if test="name!=null">
+				name=#{name},
+			</if>
+			<if test="age!=null">
+				age=#{age}
+			</if>
+			where id=#{id}
+		</set>
+	</update>
+	
+	
+	
+	
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

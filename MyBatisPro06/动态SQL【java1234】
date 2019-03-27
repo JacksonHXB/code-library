@@ -1,0 +1,10 @@
+动态SQL
+
+动态SQL片段
+	<sql id="sqlPart">
+		
+	</sql>
+	
+	
+	引用sql片段
+	<include>
