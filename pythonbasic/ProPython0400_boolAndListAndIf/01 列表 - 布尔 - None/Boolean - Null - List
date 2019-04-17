@@ -1,0 +1,115 @@
+【布尔】:
+	布尔有两个结果，一个是真True，另一个是假False
+
+
+【NULL】:
+    null在python中被视作为None
+
+
+【列表（List）】:
+	列表是一个有序的集合
+
+	格式:
+        ListName = [Option1, Option2, Option3,,,OptionN]
+
+	注意:
+		列表中的元素可以是不同类型的值
+
+	获取列表中某个元素:
+		格式:
+            ListName[subscript]
+
+	更新列表中的元素:
+		格式:
+            ListName[subscript] = newValue
+
+	列表的运算:
+		列表的组合:
+           newList = List1 + List2
+
+        Repetition of List:
+            newList = oldList * numValue
+
+		判断元素是否在列表中:
+            FoundValue in ListName
+
+		列表的截取:
+            ListName[[start], [end]]
+
+		二维列表:
+            Format:
+                2DList = [[],[],[],,,[]]
+
+	列表的方法:
+        .append(value)
+			在列表的末尾增加一个元素
+
+        .extend(value)
+			继承另一个列表，得到新的列表，新列表既包含原有的元素，又包含父列表中的元素
+
+        .insert(location, value)
+			在列表中的location位置上插入该value
+
+        .pop([index])
+        	从该索引处移除元素，如何index没有，默认是删除列表中的最后一个元素，并返回被删除的元素
+
+        .remove(element)
+			从列表中删除该元素，如果没有element则默认删除列表中的第一个元素
+
+        .clear()
+			删除列表中的所有元素，称为一个空的列表
+
+        .index(element, [start], [end])
+        	从[start]到[end]范围内查找element元素，并返回该位置上的索引，如果列表中有多个相同的元素，那么默认返回被查找的第一个元素位置上的索引
+        	
+        len(ListName)
+			返回列表的长度
+
+        max(ListName)
+        	返回列表中的最大值，如果列表中存在字符串，将会抛出异常
+
+        .count(element)
+			计算某个元素出现的次数
+
+        .reverse()
+			将列表的元素所在位置反转
+
+        .sort()
+			对列表中的元素进行升序排序
+
+        .copy()
+			深拷贝，与浅拷贝存在区别
+
+        list(tuple)
+			将元组转为列表
+	列表推导式：
+		[print(each) for each in list]
+		前面为表达式，返回的结果是一个列表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

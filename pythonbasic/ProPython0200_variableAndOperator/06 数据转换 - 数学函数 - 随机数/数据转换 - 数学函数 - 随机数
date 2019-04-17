@@ -1,0 +1,134 @@
+【数据转换】
+	 数值型数据的互相转换:
+		将浮点数转为整数：int("Float Numbers")
+		将整数转为浮点数：float("Integer Numbers")
+
+	将字符串转为数值型数据:
+		将字符串转为整数：int("String")
+		将字符串转为浮点数：float("String")
+
+
+【数学函数】:
+    abs(param):
+		求绝对值
+
+    max(param1, param2,,,paramN)
+		求几个数中间的最大值
+
+    min(param1, param2,,,paramN)
+		求几个数中间的最小数
+
+    pow(param1, param2)
+    	获取参数1的参数2次方的值 	2^3=8
+
+    round(param1, [param2])
+		四舍五入，参数二表示小数位数
+
+    math.ceil(param)
+		去掉小数位，并进一位
+
+    math.floor(param)
+    	去掉小数位
+
+    math.modf(param)
+		返回整数部分和小数部分
+
+    math.sqrt(param)
+		求平方根
+
+【随机数】:
+    random.choice([param1, param2,,, paramN])
+		从一个列表中随机取出一个数，这个数可以是任何类型的值
+
+    random.randrange([start], stop, [step])
+		生成在一个范围内的随机数，step表示步长
+
+    random.shuffle(List)
+		将列表中的元素随机排序
+
+    random.uniform(start, stop)
+		在一个范围内随机生成一个实数
+
+
+【包】：
+    封装了一些函数.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

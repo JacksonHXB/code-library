@@ -1,0 +1,50 @@
+【1】 ParameterPassing
+    <1> Pass by value:
+        The value passed is immutable. Such as string, tuple, number.
+
+
+    <2> Pass by quote:
+        The value passed is a variable type. Such as list, dict, set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

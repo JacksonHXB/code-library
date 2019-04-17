@@ -1,0 +1,71 @@
+【关键字参数】
+    <1> Concept of keyword parameter:
+		允许函数调用的参数序列与定义不一致。
+
+【参数默认值】
+    <1> Concept of keyword parameter:
+		当函数被调用时，在参数对应的值没有被传递过来时，默认的参数将被使用
+
+
+    <2> 注意:
+    	如果你想使用默认的参数值，最好是在参数列表的末尾添加默认值
+
+
+【可变参数】
+    <1> Concept of Variable-length parameter:
+    	它可以处理比计划更多的传递过来的参数值
+
+    <2> Operations of variable-length parameter:
+		具有（*）的变量保存所有未命名的变量参数。如果调用函数时没有指定参数，则它是空元组。
+
+【匿名函数】
+    <1> Concept of anonymous function:
+        	不是用def定义函数，而是用户lambda创建匿名函数。.
+
+    <2> 特征:
+        1）lambda只是一个表达式。函数体比DEF简单。
+		2）lambda的主体是一个表达式，而不是代码块，只需在lambda表达式中封装一些简单的逻辑即可。
+		3）lambda函数本身指定空间，并且除了自由参数列表之外，不能访问全局命名空间的参数。
+		4）lambda函数是一个表达式，它看起来像一行书写。
+
+    <3> Format:
+        lambda param1, param2,,,paramN: Expression
+    	返回一个函数名
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

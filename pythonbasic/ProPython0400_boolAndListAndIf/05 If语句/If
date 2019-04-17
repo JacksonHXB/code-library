@@ -1,0 +1,44 @@
+If:
+    Format 1：
+        if Expression1:
+            Statement1
+        elif Expression2:
+            Statement2
+        ...
+        [else ExpressionN:
+            StatementN]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

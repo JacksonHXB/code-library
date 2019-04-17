@@ -1,0 +1,90 @@
+【表达式】:
+	由变量、常量和运算符组成的公式称为表达式。
+
+
+【操作符】:
+	算术运算符:
+        +   -   *   /   %   **  //
+        addition    subtraction   multiplication   division   remainder   power   DivisionInteger
+        Format: param1 Operator param2
+
+	赋值运算符:
+        =
+        EqualSign
+        Format: variables = expressions
+        Composite Operators:
+            +=  -=  *=  /=  %=  **=  //=
+            Format: param1 Operator param2
+
+	位运算符:
+        &(按位与)      |(按位或)      ^(按位异或)   ~(按位取反)   <<(按位左移)   >>(按位右移)
+        BitwiseAnd  BitwiseOr   BitwiseXor  BitwiseInvert
+        Analys:
+            &: The value in the corresponding position is the same,the result is 1,otherwise 0.
+            |: There is a corresponding posistion where the value is 1 and the result is 1,otherwise 0.
+            ^: The value in the corresponding position is the diffrence,the result is 1,otherwise 0.
+            ~: The vlaues in corresponding positions are reversed.
+
+	关系运算符:
+        ==  !=  >   <   >=  <=
+
+	逻辑运算符:
+        and(逻辑与)    or(逻辑或)   not(逻辑非)
+        LogicalAnd   LogicalOr    LogicalNot
+
+	成员运算符:
+        in      not in
+        Analys:
+            in: If the value is found in the specified sequence,retrun true,otherwise false.
+            not in: If the value is not found in the specified sequence,return true,otherwise false.
+
+    Identity Operators:
+        is   is not
+        Analys:
+            is: Determines whether two identifiers refer to the same object.
+            is not: Determines whether two identifiers refer to the different object.
+
+
+【if语句】
+    Format 1:
+        if Expression:
+            Statement
+
+        For example:
+            if 3 > 2:
+                print("Yes")
+
+        Analys:
+            If the result of the expression is true, The program will execute the statement.Otherwise the program will not execute the statement.
+
+    Format 2:
+        if Expression:
+            Statement 1
+        else:
+            Statement 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

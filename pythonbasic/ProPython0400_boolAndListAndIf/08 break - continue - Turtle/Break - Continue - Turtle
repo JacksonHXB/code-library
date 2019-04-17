@@ -1,0 +1,99 @@
+【Break】
+    Break out of the for and while loops.
+    Attention:
+        1, It can only jump out of a recent loop.
+        2, If there is a break statement in loop, then the else statment will not be executed forever.
+
+
+【Continue】
+    Skip the remaining statements in the current loop and continue the next loop.
+
+
+
+【Turtle】
+    This is a simple drawing tool.
+
+    Attention:
+        The origin of the drawing window is in the positive center.The sea turtle's orientation is on the right.
+
+    Motion command:
+        .forward(d)
+            Move forward d.
+        .backward(d)
+            Move backward d.
+        .right(d)
+            Turn the d to the right.
+        .left(d)
+            Turn the d to the left.
+        .goto(x, y)
+            Move to the target location.
+        .speed(speed)
+            The speed of the drawer,the range is [0, 10]
+
+    Stroke control command:
+        .up()
+            Brush up.
+        .down()
+            Brush down.
+        .setheading()
+            Change the direction of the turtle.
+        .pensize()
+            Set the width of the drawer.
+        .pencolor()
+            Set the color of the drawer.
+        .reset()
+            Reset the window，reset the turtle.
+        .clear()
+            Reset the window,but not reset the turtle.
+        .circle(r, [steps = numValue])
+            Draw a circle.
+        .begin_fill()
+        .fillcolor()
+        .end_fill()
+            Set the fill color.
+
+    Other command:
+        .done()
+            Let the program continue.
+        .undo()
+            Return to the previous step.
+        .hideturtle()
+            Hide the turtle.
+        .showturtle()
+            Show the turtle.
+        .screensize(width, height)
+            Set the size of the window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+【Partial Function】
+
+
+【The Scope of the Variable】
+    The variables of program are not available in all locations, and the access permissions are determined by where the variables are assigned.
+
+
+【Scope】
+    <1> Local Scope
+    <2> Global Scope
+    <3> Built in  Scope
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+# Output a statement
+print("I am a good man")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

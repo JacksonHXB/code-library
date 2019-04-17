@@ -1,0 +1,96 @@
+【String操作函数】:
+    .eval(str)
+    	将str作为一个有效的程序表达式进行处理
+
+    .len(str)
+		返回字符串的长度
+
+    .lower()
+		将字符串所有字母转换为小写
+
+    .upper()
+		将字符串所有字母转为大写
+
+    .swapcase()
+		将字符串所有字母的大写转为小写，小写转为大写
+
+    .capitalize()
+		将字符串的首字母大写，其余字母小写
+
+    .title()
+		将字符串中每个单词的单词的首字母大写
+
+    .center(width, fillchar)
+		将字符串居中显示，参数一表示宽度，参数二表示填充的字符
+
+    .zfill(width)
+
+    .count(str, [start], [end])
+    	统计字符串中出现str的次数
+
+    .find(str, [start], [end])
+    .rfind(str, [start], [end])
+		判断字符是否在包含中，返回索引下标首先从左到右默认。
+
+    .index(str, [start], [end])
+    .rindex(str, [start], [end])
+		它与.find()类似。如果需要查找的字符在单词中不存在。它将引发异常。但是函数find()将返回-1。
+
+    .lstrip([str])
+		删除左边的字符，默认是删除空格
+    .rstrip([str])
+    .strip()
+        Get rid of both spaces.
+
+
+
+【While循环语句】:
+    Format:
+        while Expression:
+            Statement
+
+
+【ASCII与String类型的转换】：
+    ord(str)
+		将字符串转为ascii码值
+
+    chr(ascii)
+		将ascii值转为字符串
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

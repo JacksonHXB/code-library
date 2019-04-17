@@ -1,0 +1,52 @@
+【运算符的优先级(从高到低)】:
+    **
+    ~   +(positiveSign)   -(negativeSign)
+    *   /   %   //
+    +   -
+    >>  <<
+    &
+    ^   |
+    <=  <   >   >=
+    ==  !=
+    =   %=  +=  -=
+    is      is not
+    in      not in
+    not    or    and
+
+【字符串（String）】:
+	字符串是用单引号或双引号括起来的任意文本。
+	字符串的运算：
+        1，字符串连接:  str1 + str2
+        2，输出多个字符串:   str * numberValue
+        3，获取字符串中的任意字符:
+            1> 根据索引查找某字符: str[index]
+            2> 截取字符:  str[[start] : [stop]]
+                Attention: The range is [start,stop)
+        4，判断两个字符串的包含关系:    str1 in str2        str1 not in str2
+	注意：字符串不能被改变
+
+
+【转义字符】:
+    \n  define line break
+    \t  tabs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

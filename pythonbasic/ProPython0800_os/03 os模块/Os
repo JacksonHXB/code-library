@@ -1,0 +1,102 @@
+【OS】：
+    It contains all functions of ordinary operating systems.
+
+    <1> Operation of OS
+        os.name
+            Get the type of operation system.
+            nt---windows
+            posix---Linux,Unix,Mac OS
+
+        os.environ
+            Get the environment variable of the system.
+
+        os.curdir
+            Get the directory of the current location.
+
+        os.getcwd()
+            Get the directory of current working location.
+
+        os.listdir()
+            Get the list of the content at this location.
+
+        os.mkdir()
+            Create the new directory.
+
+        os.rmdir()
+            Delete the directory.
+
+        os.stat(str)
+            Get the properties of the file.
+
+        os.rename(oldName, newName)
+            Rename the file.
+
+        os.remove(str)
+            Delete the file.
+
+        os.system(command)
+            Execute the system command.
+
+    <2> Operation of the OS.PATH
+        os.path.abspath()
+            Get the absolute path.
+
+        os.path.join(path1, path2)
+            Connect the path1 and path2.
+
+        os.path.split()
+            Split the path.
+
+        os.path.splitext()
+            Get the extension name.
+
+        os.path.isdir(str)
+            Determine whether str is a directory.
+
+        os.path.isfile(file)
+            Determine whether file exists.
+
+        os.path.exists(path)
+            Determine whether the directory exists.
+
+        os.path.getsize(path)
+            Get the size of the file.
+
+        os.path.dirname()
+            Get the path of the loction
+
+        os.path.basename()
+            Get the name of the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

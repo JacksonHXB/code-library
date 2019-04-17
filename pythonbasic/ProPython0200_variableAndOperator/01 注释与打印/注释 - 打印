@@ -1,0 +1,7 @@
+注释:
+	 单行注释:
+        # comments
+
+	多行注释:
+        """comments"""
+        '''comments'''
