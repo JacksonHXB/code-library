@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>主页</title>
+<!-- 引入css文件 -->
+<link rel="stylesheet" type="text/css" href="static/css/home.css"/>
+</head>
+<body>
+	<h1>这是主页</h1>
+	
+	<!-- 变量 -->
+	<h1>num:{{ num }}</h1>
+	
+	<!-- 表达式 -->
+	<h1>num + 10 :{{ num + 10}}</h1>
+	
+	<!-- 字典 -->
+	<h1>{{ param["name"] }}</h1>
+	
+	<!-- **per -->
+	<h1>{{ age }}</h1>
+	
+	<!-- IF语句 -->
+	{% if num >= 0 %}
+		<h1>Jackson is a good man!</h1>
+	{% end %}
+	
+	<!-- for循环 -->
+	<ul>
+		{% for stu in stus %}
+			<li>{{ stu["name"] }} -- {{ stu["age"] }}</li>
+		{% end %}
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

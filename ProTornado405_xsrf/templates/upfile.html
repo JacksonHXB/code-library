@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+</head>
+<body>
+	<form action="/cookienum2" method="POST">
+		<!-- 方式一：xsrf的应用 
+			{% module xsrf_form_html() %}
+		-->
+		姓名：<input type="text" name="username" /><br>
+		密码：<input type="password" name="passwd" /><br>
+		<input type="submit" value="登录"/> 
+		<!-- 方式二： 通过隐藏组件的形式,也就是方式一的原理 -->
+		<input id="hi" type="hidden" name="_xsrf" value=""/>
+	</form>
+	<script>
+		//手动获取cookie的值
+		function getCookie(name){
+			var cook = document.cookie.match("\\b"+name+"=([^;]*)\\b")
+			return cook ? cook[1] : undefined
+		}
+		//获取xsrf的值
+		console.log(getCookie("_xsrf"))
+		document.getElementById("hi").vaue=getCookie("_xsrf"))
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
