@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- 注册切面 -->
+	<bean id="myAspect" class="com.hxb.aop02.MyAspect"/>
+	
+	<!-- 注册目标对象 -->
+	<bean id="someService" class="com.hxb.aop02.SomeServiceImpl"/>
+	
+	<!-- aop配置 -->
+	<aop:config>
+		<!-- 自定义切点 -->
+		<aop:pointcut expression="execution(* *..ISomeService.doFirst(..))" id="doFirstPointcut"/>
+		<aop:pointcut expression="execution(* *..ISomeService.doSecond(..))" id="doSecondPointcut"/>
+		<aop:pointcut expression="execution(* *..ISomeService.doThrid(..))" id="doThridPointcut"/>
+		
+		<!-- 配置切面 -->
+		<aop:aspect ref="myAspect">
+			<!-- 配置前置通知 -->
+			<aop:before method="myBefore" pointcut="execution(* *..ISomeService.doFirst(..))"/>
+			<aop:before method="myBefore(org.aspectj.lang.JoinPoint)" pointcut-ref="doFirstPointcut"/>
+			
+			<!-- 配置后置通知 -->
+			<aop:after-returning method="myAfterReturning(java.lang.Object)" pointcut-ref="doSecondPointcut" returning="result"/>
+			
+			<!-- 配置环绕通知 -->
+			<aop:around method="myAround" pointcut-ref="doSecondPointcut"/>
+			
+			<!-- 配置异常 -->
+			<aop:after-throwing method="myAfterThrowing(java.lang.Exception)" pointcut-ref="doThridPointcut" throwing="ex"/>
+			
+			<!-- 配置最终通知 -->
+			<aop:after method="myAfter" pointcut-ref="doThridPointcut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

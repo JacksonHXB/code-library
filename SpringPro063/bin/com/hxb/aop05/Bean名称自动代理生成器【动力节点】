@@ -1,0 +1,57 @@
+【1】顾问（Advisor）
+	通知（Advice）是Spring提供的一种切面，但其功能过于简单：只能将切面织入到目标类的所有目标方法中，无法完成将切面织入到指定目标方法中
+	顾问（Advisor）是Spring提供的另一种切面。其可以完成更为复杂的切面织入功能。PointcutAdvisor是顾问的一种，可以指定具体的切入点。顾问将通知进行了包装，会根据不同的通知类型，在不同的时间点，将切面织入到不同的切入点
+	PointcutAdvisor接口有两个较为常用的实现类：
+		NameMatchMethodPointcutAdvisor名称匹配方法切入点顾问
+			存在三个问题：
+				1）不能选择目标对象
+				2）不能选择切面类型，切面只能是advisor
+				3）不能选择advisor，所有advisor均将被作为切面织入到目标方法
+				
+		RegexpMethodPointcutAdvisor正则表达式匹配方法切入点顾问
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

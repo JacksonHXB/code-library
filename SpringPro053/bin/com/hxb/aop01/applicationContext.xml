@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 注册目标对象 -->
+	<bean id="someService" class="com.hxb.aop01.SomeServiceImpl" />
+
+	<!-- 注册切面：前置通知 -->
+	<bean id="beforeAdvice" class="com.hxb.aop01.MyMethodBeforeAdvice"/>
+	
+	<!-- 生成代理对象 -->
+	<bean id="serviceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<!-- 设置目标对象 
+			<property name="targetName" value="someService" />-->
+		<property name="target" ref="someService" />
+		<!-- 设置切面 
+		<property name="interceptorNames" value="myBeforeAdvice"/>
+		-->
+		<property name="interceptorNames">
+			<list>
+				<value>beforeAdvice</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- Bean的内部注入，被注入的类，只能被外层的类使用，因此不用使用ID属性 -->
+	<bean id="myStudent" class="com.hxb.di10.Student" autowire="byName">
+		<property name="name" value="张三"/>
+		<property name="age" value="23" />
+		<property name="school">
+			<bean class="com.hxb.di10.School">
+				<property name="name" value="清华大学"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

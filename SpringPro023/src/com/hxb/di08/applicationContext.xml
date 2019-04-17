@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 当使用域属性的byType注入-->
+	<bean id="mySchool" class="com.hxb.di08.School">
+		<property name="name" value="清华大学"/>
+	</bean>
+	<bean id="myPrimarySchool" class="com.hxb.di08.PrimarySchool">
+		<property name="address" value="海淀区"/>
+	</bean>
+	
+	<!-- Student注入:域属性的自动注入 
+		autowire="byType" 会从容器中查找与实体类的域属性类型具有is-a关系的Bean的id，并将该Bean对象自动注入给该域属性
+		缺点：两个Bean同属于同一个类的时候，会报错
+	-->
+	<bean id="myStudent" class="com.hxb.di08.Student" autowire="byType">
+		<property name="name" value="张三"/>
+		<property name="age" value="23"/>
+	</bean>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

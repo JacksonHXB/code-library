@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="someService" class="com.hxb.aop02.SomeServiceImpl" />
+
+	<bean id="myAfterAdvice" class="com.hxb.aop02.MyAfterReturningAdvice"/>
+	
+	<!-- 正则表达式匹配方法切入点顾问 -->
+	<bean id="myAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="advice" ref="myAfterAdvice" />
+		<!-- 以某方法作为切入点，以正则的方式织入通知 
+			.	表示任意一个字符
+			*	表示匹配0个或多个字符
+			.*	表示任意字符
+			<property name="pattern" value=".*doFirst" />
+			<property name="patterns" value=".*doFirst,.*doSecond" />
+			<property name="pattern" value=".*doFrist|.*doSecond"/>
+			注：匹配的是全限定名com.hxb.aop02.ISomeService.doFirst
+		-->
+		<property name="pattern" value=".*Sc.*"/>
+	</bean>
+	
+	<bean id="serviceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="someService" />
+		<property name="interceptorNames" value="myAdvisor"/>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

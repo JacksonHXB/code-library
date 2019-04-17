@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 注册目标对象 -->
+	<bean id="someService" class="com.hxb.aop01.SomeServiceImpl" />
+
+	<!-- 注册切面：后置通知 -->
+	<bean id="myAfterAdvice" class="com.hxb.aop01.MyAfterReturningAdvice"/>
+	
+	<!-- 名称匹配方法切入点顾问 -->
+	<bean id="myAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+		<!-- 指定切面 -->
+		<property name="advice" ref="myAfterAdvice" />
+		<!-- 指定一个切入点 -->
+		<property name="mappedName" value="doFirst" />
+		<!-- 指定多个切入点 -->
+		<property name="mappedNames" value="doFirst,doThrid"/>
+		<!-- 也可以这样写 
+		<property name="mappedNames" value="*ir*" />
+		-->
+	</bean>
+	
+	<!-- 生成代理对象 -->
+	<bean id="serviceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="someService" />
+		<property name="interceptorNames" value="myAdvisor"/>
+		<!-- 也可以写成这样 
+		<property name="interceptorNames">
+			<list>
+				<value>myAfterAdvice</value>
+			</list>
+		</property>
+		-->
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

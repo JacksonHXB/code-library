@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- School注入,通过设置注入属性 -->
+	<bean id="mySchool" class="com.hxb.di02.School">
+		<property name="name" value="清华大学"/>
+	</bean>
+	
+	<!-- Student注入，通过构造注入属性 -->
+	<bean id="myStudent" class="com.hxb.di02.Student">
+		<!-- 构造注入方式一：（常用） 
+			<constructor-arg index="0" value="李四" />
+			<constructor-arg index="1" value="24" />
+			<constructor-arg index="2" ref="mySchool"/>
+		-->
+		<!-- 构造注入方式二：（不建议使用） 
+			<constructor-arg value="王五"/>
+			<constructor-arg value="12"/>
+			<constructor-arg value="mySchool"/>
+		-->
+		<!-- 构造注入方式三： -->
+		<constructor-arg name="name" value="王麻子"/>
+		<constructor-arg name="age" value="78"/>
+		<constructor-arg name="schoool" ref="myShool"/>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

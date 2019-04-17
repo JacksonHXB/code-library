@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd">
+   	<!-- 导入Spring配置文件方式一 
+   		<import resource="classpath:com/hxb/di14/spring-base.xml" />
+   		<import resource="classpath:com/hxb/di14/spring-beans.xml" />
+   	-->
+   	<!-- 导入Spring配置文件方式二 
+   		注意：使用该方式，其总的配置文件名不要与子配置文件类似，不然会重复加载总配置文件
+	-->
+	<import resource="classpath:com/hxb/di14/spring-*.xml" />
+   	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
