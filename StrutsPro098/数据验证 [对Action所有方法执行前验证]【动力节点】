@@ -1,0 +1,85 @@
+【1】 版本号
+	Alpha:
+		内测版，一般不向外部发布，会有很多Bug
+	Beta:
+		内测版：但相对于Aplha版已经有很大的改进，消除了严重的错误，但还是存在缺陷，需经过更多测试来消除。这个阶段版本会加入新的功能
+	RC：
+		Rleaser Candidate，发行候选版，外测版，与Beta版最大的区别在于Beta阶段会加入新的功能，而RC版一般不会加入新宫娥能，而主要着重于除错
+		RC版本是最终发放给用户的最接近正式版的版本发行后改正bug就是正式版，是正式版之前的最后一个测试版
+	GA：
+		General Availability,普通有效版，稳定版，官方开始推荐广泛使用了
+	Release：
+		发行版，即最终版，再一些列测试版本之后的正式发行版本，是最终交付用户使用的一个版本，该版本也成为标准版，Release会以单词形式出现在软件封面上，有时会使用符号R
+		
+
+【2】jar包
+	asm.jar
+	asm-commons.jar
+	asm-tree.jar
+	javassit.GA.jar
+		字节码增强，生成代理
+	commons-fileupload.jar
+		文件上传组件
+	commons-io.jar
+		文件上传所依赖的IO
+	commons-lang3.jar
+		对java.lang包的增强
+	freemarker.jar
+		Struts2的UI标签模板
+	log4j-api.jar
+	log4j-core.jar
+		log4j日志支持
+	ognl.jar
+		对象图导航语音
+	struts2-core.jar
+		Struts2的核心包
+	xwork-core.jar
+		xwork的核心包
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

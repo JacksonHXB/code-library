@@ -1,0 +1,46 @@
+【1】Struts2常用配置文件
+	struts=-default.xml
+	default.properties
+	struts-plugin.xml
+	struts.xml
+	struts.properites
+		struts.action.extension=do		配置以*.do结尾的请求
+	web.xml
+	配置文件设置的优先级从高到低
+		struts.xml > web.xml > struts.properties > default.properties
+		一般我们是在struts.xml中添加请求后缀名
+
+【2】核心配置文件
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

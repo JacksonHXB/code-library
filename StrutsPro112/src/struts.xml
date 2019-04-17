@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="xxx" namespace="/test" extends="struts-default">
+		<interceptors>
+			<interceptor name="myInterceptor" class="com.hxb.interceptors.MyInterceptor">
+				<!-- 包含方法，这两句等效，都是doSecond不执行拦截，其余方法都需要执行拦截
+					<param name="includeMethods">doFirst,doThird</param>
+				-->
+				<param name="excludeMethods">doSecond</param>
+			</interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="myInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="some_*" class="com.hxb.actions.SomeAction" method="{1}">
+			<result>/welcome.jsp</result>
+			<interceptor-ref name="myStack" />
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+【1】OGNL：
+	Struts2中很多地方都使用了OGNL，它是对象图导航语言Object-Graph Navigation Language的缩写，它是一种功能强大的表达式语言，是一个第三方开源项目
+	OGNL本身是与Struts2没有任何关系的，但是Struts框架使用了OGNL用于进行表达式计算工作。Struts2通过使用OGNL简单一致的表达式语法，可以存取对象的任意属性，调用对象的方法，遍历整个对象的结构图，实现字段类型转化等功能
+	
+【2】OGNL特点：
+	相对于其他表达式语言，它提供了更加丰富的功能
+	1）支持对象方法调用
+	2）支持类静态方法调用和常量访问，表达式的格式为：@[全限定性类名]@[方法名  | 常量名]
+	3）可以操作集合对象
+	4）可以直接创建对象
+
+【3】值栈
+	1）值栈与ActionContext的关系
+	2）值栈与值栈的 Context属性的关系
+	3）值栈的Context属性与ActionContext的关系
+	[1]值栈对象
+		在用户提交一个Action请求后，系统会马上创建两个对象；Action实例与值栈对象。Struts2中的值栈ValueStack是个接口，其实现类为OgnlValueStack
+		创建的ValueStack对向，用于存放当前Action运行过程中的相关数据。当该请求结束，Action实例小时，运行过程中的值栈对象也同时被销毁
+	[2]值栈的获取很麻烦
+	[3]context属性的别名ActionContext	
+	[4]简单的获取值栈
+		为了方便对值栈的访问，于是就将值栈对象直接放到了context这个Map中，通过查看OgnlValueStack的对root初始化方法setRoot()可以看到
+		ActionContext这个Map中最终存放着如下内容：
+		属性ActionContext:
+			valueStack
+				root
+				context(即ActionContext)
+			request
+			session
+			application
+			...
+		ValueStack的context中存放的是ActionContext的地址
+			
+	[5]值栈的栈操作
+		查看OgnlValueStack类中peek(),pop(),push()方法可知，对valuestack对象的栈的操作，本质是对root栈对象的操作。即从宏观上可以直接说值栈就是根对象，但其实根对象指的是值栈的root对象，而非根对象是值栈的context对象
+		
+【4】值栈操作
+	这里的值栈就是指宏观上的值栈，即包含根对象root与非根对象context，对于值栈的操作包括两方面：向值栈中放入数据，从值栈中读取数据。
+	值栈中的数据，可以通过Struts2便签显示：<s:property value="OGNL Expression" />
+	[1]搭建测试环境
+	向值栈中放入数据分为两种，一种为显式放入，一种是隐式放入。
+		显式放入，指显式的获取到值栈对象，然后向其中放入数据。
+		隐式放入，指没有专门讲数据放入值栈对象中的代码，却已经将数据放入
+	[2]向root中显式的放入数据
+		a，通过操作值栈来添加无名称对象
+		b，通过操作root来添加无名称对象
+		c，添加map对象
+		d，直接添加有名称对象
+		e，将root作为ArrayList来添加对象
+	[3]向root中隐式放入数据
+	[4]向context中显式放入数据
+		向context中放入数据，就是向map中放入数据，需要制定key。Strut2中已经定义好了一些key，用于完成特殊功能，访问context中的数据，即非根数据，需要使用#
+		context的map：
+			application
+			session
+			value stack(root)
+			request
+			parameters
+			attr(searches page,request,session,then application)
+	[5]向context中隐式的放入数据
+	[6]root中数据的加载顺序
+		先root后context
+	[7]request的数据的加载顺序
+		request被Struts2包装后查找顺序是：
+			1，request域空间
+			2，root
+			3，context
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

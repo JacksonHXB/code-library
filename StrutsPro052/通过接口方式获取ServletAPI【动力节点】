@@ -1,0 +1,37 @@
+【1】在Action中获取Servlet
+	为避免与Servlet api耦合， Struts2对HttpServlet，HttpSession,ServetContext进行了封装，构造了三个Map对象来替代这三种对象。当然，也可以获取到真正的这三个Servelt的API
+	[1]通过ActionContext获取
+	[2]通过ServletActionContext获取
+	[3]通过实现特定接口来获取（了解）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

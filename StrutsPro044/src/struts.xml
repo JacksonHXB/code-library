@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 通用的书写方式：
+		<package name="xxx" namespace="/test" extends="struts-default">
+			<action name="first" class="com.hxb.actions.SomeAction" method="doFirst">
+				<result name="ar">/apage.jsp</result>
+				<result name="br">/bpage.jsp</result>
+				<result>/success.jsp</result>
+			</action>
+			<action name="second" class="com.hxb.actions.SomeAction" method="doSecond">
+				<result name="ar">/apage.jsp</result>
+				<result name="br">/bpage.jsp</result>
+				<result name="welcome">/welcome.jsp</result>
+			</action>
+		</package>
+	 -->
+	 
+	 
+	<!-- 定义应用范围全局视图，一般设置为抽象package，这样就不能在其中定义action标签 -->
+	<package name="basePackage" extends="struts-default" abstract="true">
+		<global-results>
+			<result name="ar">/apage.jsp</result>
+		</global-results>
+	</package>
+	<package name="childPackage1" namespace="/test" extends="basePackage">
+		<!-- 定义包范围全局视图:action中的是视图会被先扫描，如果没有找到视图，那么就会到global-result中查找；范围为package本包;如果还没有找到，那么就会去应用范围全局视图中查找 -->
+		<global-results>
+			<result name="br">/bpage.jsp</result>
+		</global-results>
+		<action name="first" class="com.hxb.actions.SomeAction" method="doFirst">
+			<result>/success.jsp</result>
+		</action>
+		<action name="second" class="com.hxb.actions.SomeAction" method="doSecond">
+			<result name="welcome">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

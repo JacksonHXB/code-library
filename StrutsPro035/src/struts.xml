@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- package控制请求的路径 -->
+	<package name="xxx-ooo-test" namespace="/xxx/ooo/test" extends="struts-default">
+		<!-- action控制请求的方法，这里是类的默认方法execute() -->
+		<action name="login" class="com.hxb.actions.LoginAction">
+			<result name="success">/welcome.jsp</result>
+		</action>
+		<!-- 如果是直接跳转页面可以使用这种方式，同时可以删除ToRegisterPage类 ,这里是默认执行struts-default.xml中配置的ActionSupport.class
+			<action name="toRegisterPage">
+				<result name="success">/register.jsp</result>
+			</action>
+		-->
+		<action name="toRegisterPage" class="com.hxb.actions.ToRegisterPageAction">
+			<result name="success">/register.jsp</result>
+		</action>
+	</package>
+	<package name="xxx-jjj-test" namespace="/xxx/jjj/test" extends="struts-default">
+		<!-- actin标签：如果methd属性，那么就默认执行该类的execute() -->
+		<action name="login" class="com.hxb.actions.LoginAction" method="doSome">
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+	<package name="xxx-yyy-test" namespace="/" extends="struts-default">
+		<action name="login" class="com.hxb.actions.LoginAction">
+			<!--resutl标签： 
+				name:如果方法返回的值时success那么那么属性时可以省略不写的 
+				type:默认是dispatcher，所以页面能获取传递过来的数据
+			-->
+			<!-- 请求转发 -->
+			<result type="dispatcher">/welcome.jsp</result>
+			<!-- 重定向 :页面接受的参数名要与这里一致,注意这里的&，需要转义一下
+					<result type="redirect" name="success">/welcome.jsp?uname=${name}&amp;upwd=${age}</result>
+				也可以这样写：
+					<result type="redirect">
+						<param name="location">/welcome.jsp</param>
+						<param name="uname">${name}</param>
+						<param name="uage">${age}</param>
+					</result>
+			-->
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

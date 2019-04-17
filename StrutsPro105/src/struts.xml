@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="xxx" namespace="/test" extends="struts-default">
+		<interceptors>
+			<interceptor name="permissionInterceptor" class="com.hxb.interceptors.PermissionInterceptor"/>
+			<!-- 使用拦截器栈的方式也可以注册拦截器 -->
+			<interceptor-stack name="permissionStack">
+				<interceptor-ref name="permissionInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 注册默认的拦截器：会自动给所有的action添加拦截器，如果action已经绑定了拦截器，那么默认的拦截器将不会起作用 -->
+		<default-interceptor-ref name="permissionStack" />
+		
+		<action name="system" class="com.hxb.actions.SystemAction">
+			<result>/welcome.jsp</result>
+			<result name="fail">/fail.jsp</result>
+			<!-- 绑定拦截器栈 -->
+			<interceptor-ref name="permissionStack"/>
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

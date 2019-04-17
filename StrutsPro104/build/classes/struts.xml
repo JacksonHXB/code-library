@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="xxx" namespace="/test" extends="struts-default">
+		<!-- 注册拦截器 -->
+		<interceptors>
+			<interceptor name="permissionInterceptor" class="com.hxb.interceptors.PermissionInterceptor"/>
+		</interceptors>
+		
+		<action name="system" class="com.hxb.actions.SystemAction">
+			<result>/welcome.jsp</result>
+			<!-- 绑定拦截器，如果指定了拦截器，那么系统默认的20多个拦截器将不会起作用 -->
+			<interceptor-ref name="permissionInterceptor" />
+			<!-- 绑定默认的拦截器 -->
+			<interceptor-ref name="defaultStack" />
+			<!-- 访问失败的页面 -->
+			<result name="fail">/fail.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

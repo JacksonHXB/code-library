@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+	"-//Apache Struts//XWork Validator 1.0.3//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<!-- "+”表示大于等于1；“*”表示大于等于0；“？”表示小于等于1 -->
+<validators>
+	<field name="name"><!-- name表示用户名 -->
+		<field-validator type="requiredstring"><!-- type表示验证器类型，在default.xml中可以找到 -->
+			<param name="trim">true</param><!-- 默认的设置 -->
+			<message>用户名不能为空</message>
+		</field-validator>
+	</field>
+	<field name="mobile">
+		<field-validator type="requiredstring">
+			<message>手机号不能为空</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[^1[34578]\d{9}$]]></param><!-- 正则表达式放入到CDATA区中 -->
+			<message>手机号格式不正确</message>
+		</field-validator>
+	</field>
+</validators>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
