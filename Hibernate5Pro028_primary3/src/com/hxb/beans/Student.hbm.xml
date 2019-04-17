@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hxb.beans">
+	<!-- 映射文件的作用：
+		1，类到表的映射
+		2，属性到字段的映射
+	-->
+	<!--  
+		<class name="com.hxb.beans.Student" table="tb_student">如果此映射文件只映射一个对象，可以通过这种方式写，同时去掉hibernate-mapping的package属性
+	-->
+	<class name="Student" table="tb_student"><!-- 类到表的映射 -->
+		<id name="id" column="tid"><!-- 属性到字段的映射 -->
+			<generator class="native" /><!-- 通过主键生成策略生成主键 -->
+		</id>
+		<property name="name" column="tname" />
+		<property name="age" column="tage" />
+		<property name="score" column="tscore" />
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

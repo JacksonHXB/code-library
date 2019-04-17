@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hxb.beans">
+	<class name="Student" table="tb_student">
+		<id name="id" column="tid">
+			<!-- 主键生成策略 
+				increment：会先查询id的最大值，然后在最大值上加1，且生成的数据表没有自动递增
+				identity：该策略使用数据库自身的自增长来维护主键值。如mysql调用auto_increment来维护，即使最后的执行是回滚，DB中记录主键值的变量也会增1
+				sequence
+				native
+				uuid
+				assigned
+			-->
+			<generator class="native" />
+		</id>
+		<property name="name" column="tname" />
+		<property name="age" column="tage" />
+		<property name="score" column="tscore" />
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

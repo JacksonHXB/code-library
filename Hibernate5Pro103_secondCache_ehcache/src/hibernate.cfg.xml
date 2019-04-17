@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/db_test</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 注册二级缓存区域工厂Bean:用于开辟独立的空间给二级缓存EHCache使用-->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		
+		<mapping resource="com/hxb/beans/Country.hbm.xml"/>
+		<mapping resource="com/hxb/beans/Minister.hbm.xml"/>
+		
+		<!-- 指定缓存的第二种方式，建议使用这种方式 -->
+		<!-- 指定类缓存 
+			<class-cache usage="read-only" class="com.hxb.beans.Country" />
+			<class-cache usage="read-only" class="com.hxb.beans.Minister" />
+		-->
+		<!-- 指定集合缓存，复制权限定属性名 
+			<collection-cache usage="read-only" collection="com.hxb.beans.Country.ministers"/>
+		-->
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

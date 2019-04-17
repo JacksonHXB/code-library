@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- 定义session-factory会话工厂，与Action中的Session是不一样的 -->
+	<session-factory>
+		<!-- DB连接四要素 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/db_test</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+		
+		<!-- 注册方言 ：与标准的SQL相比，各个不同的数据库管理系统有细微的不同写法，则不同的写法就是所谓的方言，通过方言，生成相应的SQL语句，让相应的DBMS来执行-->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<!-- 注册数据源:数据库连接池 
+			应用服务器：Tomcat；数据库服务器：装有数据库的服务器-->
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		
+		<!-- 配置当前session上下文类:thread可以保证在同一线程中获取到的session是同一个session -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- 配置自动建表：create与update,create每一次运行都会删除表重新建立 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 显示SQL -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- 配置格式化SQL -->
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- 注册映射文件 -->
+		<mapping resource="com/hxb/beans/Student.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

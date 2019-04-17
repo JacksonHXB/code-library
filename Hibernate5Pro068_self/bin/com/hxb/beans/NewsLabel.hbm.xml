@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hxb.beans">
+	<class name="NewsLabel">
+		<id name="id"><generator class="native" /></id>
+		<property name="name"/>
+		<property name="content" />
+		<!-- 父类维护关联关系 -->
+		<set name="childNewsLabels" cascade="save-update">
+			<key column="pid"/>
+			<one-to-many class="NewsLabel"/>
+		</set>
+		<!-- 子类维护关联关系 -->
+		<many-to-one name="parentNewsLabel" cascade="save-update" column="pid"/>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
