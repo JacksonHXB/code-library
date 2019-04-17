@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML转义</title>
+</head>
+<body>
+	<p>这是HTML转义测试</p>
+	{{ code }}
+	<hr>
+	<!-- 通过escape过滤器来进行转义 -->
+	{{ code | escape }}
+	<hr>
+	<!-- 通过safe过滤器转义 -->
+	{{ code | safe }}
+	
+	<!-- 关闭自动转义 -->
+	{% autoescape on %}
+		{{ code }}
+	{% endautoescape %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

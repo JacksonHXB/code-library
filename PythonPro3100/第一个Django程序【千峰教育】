@@ -1,0 +1,124 @@
+【1】配置数据库：
+    注意：Django默认使用的SQLite数据库
+    在settings.py文件中，通过DATABASES选项进行数据库配置
+    配置MySQL数据库
+        python3.x安装的是PyMySQL
+        在__init__.py文件中写入两行代码
+            import pymysql
+            pymysql.install_as_MySQLdb()
+
+
+【2】创建应用：
+    在一个项目中可以创建多个应用，每个应用进行一种业务处理
+    1）创建步骤：
+        a. 在一个项目中可以创建多个应用，每个应用进行一种业务处理
+        b. 打开黑屏终端进入该项目目录下
+        c. 执行python manage.py startapp myApp
+    2) myApp目录说明：
+        admin.py
+            配置站点
+        models.py
+            模型
+        views.py
+            视图
+
+
+【3】激活应用
+	在settings.py文件中，在myApp应用加入到INSTALLED_APPS选项中	
+
+
+【4】定义模型
+	有一个数据表就对应一个模型，
+	在models.py中定义模型：引入from django.db import models
+		因为模型类要进程models.Model类
+
+
+【5】在数据库中生成数据表
+	1） 生成迁移文件
+		执行命令:python manage.py makemigrations
+	2）执行迁移
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>分页</title>
+</head>
+<body>
+	<!-- 分页内容 -->
+	<ul>
+		{% for stu in students %}
+			<li>{{ stu.sname }} -- {{ stu.sgrade }}</li>
+		{% endfor %}
+	</ul>	
+	<!-- 分页按钮 -->
+	<ul>
+		{% for index in students.paginator.page_range %}
+			<!-- 如果是当前页面，就不能被点击 -->
+			{% if index == students.number %}
+				<li>{{ index }}</li>
+			{% else %}
+				<li><a href="/studentPage/{{index}}/">{{ index }}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

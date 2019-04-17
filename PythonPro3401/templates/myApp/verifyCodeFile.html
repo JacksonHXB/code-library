@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片验证码</title>
+</head>
+<body>
+	<form method="post" action="/verifyCodeCheck/">
+		{% csrf_token %}
+		<input type="text" name="verifyCode"/>
+		<!-- 显示图片 -->
+		<img src="/showVerifyCode/">
+		<input type="submit" value="提交"/>	
+		<span>{{ flag }}</span>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

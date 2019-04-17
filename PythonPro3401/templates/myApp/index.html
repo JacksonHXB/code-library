@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+</head>
+<body>
+	<h1>Jackson is a good man!</h1>
+	<p>获取对象的名称:{{student.sname}}</p>
+	<p>获取对象的方法：{{student.getName}}</p>
+	
+	<!-- IF语句 -->
+	{% if num %}
+		<p>获取值：{{num}}</p>
+	{% endif %}
+	
+	
+	<!-- 注释 -->
+	{% comment %}
+		这是一个注释
+	{% endcomment%}	
+	
+	
+	<!-- 过滤器 -->
+	<h1>{{ "feiIAeRT"|upper}}</h1>	
+	<h1>{{ list|join:'e'}}</h1>
+	<h1>{{ test|default:'这里没有值'}}</h1>
+	<h1>num = {{num|add:10}}</h1>
+	<h1>num = {{num|add:-10}}</h1>
+	<!-- 乘法：num/1*5 -->
+	<h1>num = {%widthratio num 1 5%}</h1>
+	<h1>num = {%widthratio num 2 1%}</h1>
+	
+	
+	<!-- 硬链接 -->
+	<a href="/test/good/1234/">链接</a>
+	{# <a href="{% url 'myApp:good' 1234 %}">链接2</a> #}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- FOR语句 -->
+	<ul>
+		{% for student in studentList %}
+			{# 当为奇数行时显示绿色，偶数行时显示红色  #}
+			{% if forloop.counter|divisibleby:2 %}
+				<li style="color:red">{{ forloop.counter}}--{{ student.sname }}--{{ student.sgrade }}</li>
+			{% else %}
+				<li style="color:green">{{ forloop.counter}}--{{ student.sname }}--{{ student.sgrade }}</li>
+			{% endif %}
+		{% empty %}
+			<li>目前没有学生</li>
+		{% endfor %}
+	</ul>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

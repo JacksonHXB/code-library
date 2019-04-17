@@ -1,0 +1,50 @@
+【1】创建项目的过程
+    1）在合适的位置创建一个目录
+    2）打开黑屏终端进入到上一部创建的目录下
+    3）输入django-admin startproject 项目名
+
+【2】项目的目录结构：
+    manage.py
+        一个命令行工具，可以使我们用多种方式对Django项目进行交互
+
+    project/__init__.py
+        一个空文件，它告诉python这个目录应该被看作一个python包
+    project/settings.py
+        项目的配置文件
+    project/urls.py
+        项目的URL声明
+    project/wsgi.py
+        项目与WSGI兼容的web服务器入口
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
