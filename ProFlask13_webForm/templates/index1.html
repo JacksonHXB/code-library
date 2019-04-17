@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST"> 
+		<label>用户名：</label><input type="text" name="username"/><br>
+		<label>密码：</label><input type="password" name="password"/><br>
+		<label>确认密码：</label><input type="password" name="password2"/><br>
+		<input type="submit" value="提交"/>
+		<!-- 使用遍历获取闪现的消息  -->
+		{% for message in get_flashed_messages() %}
+			{{ message }}
+		{% endfor %}
+	</form>
+	
+	<hr>
+	
+	<!--WTF表单 -->
+	<form method="POST">
+		<!-- 开启CSRF -->
+		{{ login_form.csrf_token() }}
+		{{ login_form.username.label }}{{ login_form.username }}<br>
+		{{ login_form.password.label }}{{ login_form.password }}<br>
+		{{ login_form.password2.label }}{{ login_form.password2 }}<br>
+		{{ login_form.submit }}
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
