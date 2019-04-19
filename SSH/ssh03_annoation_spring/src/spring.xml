@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/aop
+    	http://www.springframework.org/schema/aop/spring-aop.xsd
+    	http://www.springframework.org/schema/tx
+    	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 注册数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+	
+	<!-- 注册jdbc属性文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	
+	<!-- 注册SessionFactory -->
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingDirectoryLocations" value="classpath:com/hxb/beans"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 注册Dao -->
+	<bean id="studentDao" class="com.hxb.dao.StudentDaoHbnImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	
+	<!-- 注册Service -->
+	<bean id="studentService" class="com.hxb.service.StudentServiceImpl">
+		<property name="dao" ref="studentDao" />
+	</bean>
+	
+	<!-- 注册Action -->
+	<bean id="registerAction" class="com.hxb.actions.RegisterAction" scope="prototype"><!-- 这个必须是多例的，因为struts2中的action是多例的 -->
+		<property name="service" ref="studentService"/>
+	</bean>
+	<bean id="queryAction" class="com.hxb.actions.QueryAction" scope="prototype">
+		<property name="service" ref="studentService"/>
+	</bean>
+	
+	<!-- 注册事务管理器  -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" isolation="DEFAULT" propagation="REQUIRED" />
+			<tx:method name="remove*" isolation="DEFAULT" propagation="REQUIRED" />
+			<tx:method name="modify*" isolation="DEFAULT" propagation="REQUIRED" />
+			<tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop -->
+	<aop:config>
+		<aop:pointcut expression="execution(* *..service.*.*(..))" id="myPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut" />
+	</aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

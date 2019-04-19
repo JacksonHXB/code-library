@@ -1,0 +1,47 @@
+package com.hxb.dao;
+
+import com.hxb.beans.Student;
+
+public interface IStudentDao {
+	
+	public void insertStudent(Student student);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
