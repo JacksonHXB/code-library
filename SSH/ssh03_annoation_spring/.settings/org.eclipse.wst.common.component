@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ssh03_annoation_spring">
-        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/ssh03_annoation_spring/build/classes"/>
-        <property name="context-root" value="ssh03_annoation_spring"/>
-    </wb-module>
-</project-modules>

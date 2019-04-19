@@ -1,0 +1,62 @@
+++++++++++++++++++++++++++++++++++++++
+消息摘要算法：
+++++++++++++++++++++++++++++++++++++++++
+
+【1】分类：
+	MD (Message Digest) 消息摘要
+	SHA (Secure Hash Algorithm) 安全散列
+	MAC (Message Authentication Code) 消息认证码
+	三类算法是验证数据的完整性，是数字签名核心算法
+	
+	
+【2】消息摘要算法：MD
+	MD5:MD家族（128位摘要信息）还有MD2, MD4
+	
+	算法		摘要长度	实现方
+	MD2		128		JDK
+	MD4		128		Bouncy Castle
+	MD5		128		JDK
+	
+【3】SHA
+	安全散列算法
+	固定长度摘要信息
+	被认为是MD5的继承者
+	SHA1,SHA2(SHA-224,SHA-256,SHA-384,SHA-512)
+	
+	
+【4】MAC
+	hmac含有秘药的散列函数算法
+	融合了MD,SHA
+	应用如：SecureCRT	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
